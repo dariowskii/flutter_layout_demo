@@ -1,16 +1,28 @@
 # flutter_layout_demo
 
-A new Flutter project.
+Demo creata per il Meetup [CounterApp & Flutter Forward Extended Modena](https://www.meetup.com/it-IT/flutter-modena/events/290997993/) incentrata sull'uso del `LayoutBuilder`:
 
-## Getting Started
+File: [home_screen.dart](./lib/screens/home_screen.dart)
 
-This project is a starting point for a Flutter application.
+```dart
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
-A few resources to get you started if this is your first Flutter project:
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, constraints) {
+      if (constraints.maxWidth >= 1024) {
+        return const DesktopHomeScreen();
+      }
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+      if (constraints.maxWidth >= 600) {
+        return const TabletHomeScreen();
+      }
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+      return const MobileHomeScreen();
+    });
+  }
+}
+```
+
+Made with ❤️ by [Dario Varriale](https://www.linkedin.com/in/dario-varriale/).
