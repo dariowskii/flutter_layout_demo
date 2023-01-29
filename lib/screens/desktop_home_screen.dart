@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_layout_demo/widgets/base_container.dart';
 import 'package:flutter_layout_demo/widgets/base_scaffold.dart';
 import 'package:flutter_layout_demo/widgets/list_demo.dart';
 import 'package:flutter_layout_demo/widgets/mail_content.dart';
@@ -17,62 +18,20 @@ class DesktopHomeScreen extends StatelessWidget {
             Expanded(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            spreadRadius: 1,
-                            blurRadius: 10,
-                            offset: const Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                      child: const Center(
-                        child: MenuDemo(),
-                      ),
+                children: const [
+                  BaseContainer(
+                    child: Center(
+                      child: MenuDemo(),
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            spreadRadius: 1,
-                            blurRadius: 10,
-                            offset: const Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                      child: const ListDemo(),
-                    ),
+                  SizedBox(width: 10),
+                  BaseContainer(
+                    child: ListDemo(),
                   ),
-                  const SizedBox(width: 10),
-                  Expanded(
+                  SizedBox(width: 10),
+                  BaseContainer(
                     flex: 3,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            spreadRadius: 1,
-                            blurRadius: 10,
-                            offset: const Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                      child: const MailContent(),
-                    ),
+                    child: MailContent(),
                   ),
                 ],
               ),

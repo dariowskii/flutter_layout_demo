@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MailContent extends StatelessWidget {
-  const MailContent({super.key});
+  const MailContent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

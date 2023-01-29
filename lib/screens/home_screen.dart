@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
         return const DesktopHomeScreen();
       }
 
-      if (constraints.maxWidth >= 500) {
+      if (constraints.maxWidth >= 600) {
         return const TabletHomeScreen();
       }
 
